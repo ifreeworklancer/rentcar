@@ -1,0 +1,42 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 18px;
+    font-family: $headings-font-family;
+    font-weight: normal;
+    transition: .5s;
+    z-index: 5;
+
+    &-primary {
+        color: #fff;
+    }
+
+    &-more {
+        overflow: hidden;
+        padding-right: 60px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            width: 30px;
+            height: 2px;
+            background: $primary;
+            transition: .7s;
+        }
+
+        &:hover {
+            padding-right: $btn-padding-x;
+            background: #ccc;
+
+            &:before {
+                right: -20%;
+            }
+        }
+    }
+}

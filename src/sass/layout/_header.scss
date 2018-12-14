@@ -1,0 +1,22 @@
+#app-header {
+    @extend %pos;
+    top: 0;
+    bottom: auto;
+    padding-top: 15px;
+    z-index: 100;
+
+    .btn {
+        padding: 15px 25px;
+    }
+
+    .contacts-list {
+        margin-left: 25px;
+    }
+}
+
+.logo {
+    display: block;
+    width: 130px;
+    height: 32px;
+    @extend %img;
+}

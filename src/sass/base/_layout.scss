@@ -1,0 +1,39 @@
+.contacts-list {
+
+  &-item {
+
+    &--phone {
+
+      a {
+        padding-left: 35px;
+
+        &::before {
+          width: 25px;
+          height: 35px;
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQgMzAiPjxwYXRoIGZpbGw9IiNmZmJkNjkiIGQ9Ik0xNS40LDEuOEg4LjZDNywxLjgsNS43LDMsNS43LDQuNnYxNC44YzAsMS42LDEuMywyLjgsMi44LDIuOGg2LjhjMS42LDAsMi44LTEuMywyLjgtMi44VjQuNkMxOC4zLDMsMTcsMS44LDE1LjQsMS44eiBNMTcuMSwxOS40YzAsMC45LTAuOCwxLjctMS43LDEuN0g4LjZjLTAuOSwwLTEuNy0wLjgtMS43LTEuN1Y0LjZjMC0wLjksMC44LTEuNywxLjctMS43aDYuOGMwLjksMCwxLjcsMC44LDEuNywxLjdWMTkuNHoiLz4gICAgICAgIDxjaXJjbGUgZmlsbD0iI2ZmYmQ2OSIgY3g9IjEyIiBjeT0iMTkuNCIgcj0iMS4xIi8+ICAgICAgICA8cGF0aCBmaWxsPSIjZmZiZDY5IiBkPSJNMTMuMSwzLjVoLTIuM2MtMC4zLDAtMC42LDAuMy0wLjYsMC42czAuMywwLjYsMC42LDAuNmgyLjNjMC4zLDAsMC42LTAuMywwLjYtMC42UzEzLjQsMy41LDEzLjEsMy41eiIvPjwvc3ZnPg==);
+        }
+      }
+    }
+
+
+    a {
+      position: relative;
+      display: block;
+      color: #fff;
+      font-family: $headings-font-family;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

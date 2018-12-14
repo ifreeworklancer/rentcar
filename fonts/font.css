@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Cuprum';
+    src: url('Cuprum-Regular.woff2') format('woff2'),
+    url('Cuprum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cuprum';
+    src: url('Cuprum-Bold.woff2') format('woff2'),
+    url('Cuprum-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Light.woff2') format('woff2'),
+    url('HelveticaNeueCyr-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('HelveticaNeueCyr-Roman.woff2') format('woff2'),
+    url('HelveticaNeueCyr-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

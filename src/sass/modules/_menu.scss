@@ -1,0 +1,175 @@
+.burger-menu {
+  position: relative;
+  padding: 15px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  cursor: pointer;
+  z-index: 100;
+
+  &.active {
+
+    .burger-menu-icon {
+
+      .line-row {
+        height: 10px;
+
+        &--bottom {
+          .line {
+            height: 12px;
+
+            &--left {
+              left: 2px;
+              transform: rotate(50deg);
+            }
+
+            &--right {
+              right: 2px;
+              transform: rotate(-50deg);
+            }
+          }
+        }
+      }
+
+      .line {
+        height: 12px;
+
+        &--left {
+          left: 2px;
+          transform: rotate(-50deg);
+        }
+
+        &--right {
+          right: 2px;
+          transform: rotate(50deg);
+        }
+      }
+    }
+  }
+
+  &-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 20px;
+
+    .line-row {
+      position: relative;
+      height: 8px;
+      transition: .4s;
+    }
+
+    .line {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: $primary;
+      transition: .4s;
+
+      &--left {
+        left: 0;
+      }
+
+      &--right {
+        right: 0;
+      }
+    }
+  }
+
+  &-text {
+    margin-left: 15px;
+    font-family: $headings-font-family;
+    font-weight: normal;
+    user-select: none;
+  }
+}
+
+.menu {
+  @extend %pos;
+  transform: translateX(-100%);
+  position: fixed;
+  background: #f6f6f6;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .7s;
+
+  @media (min-width: map_get($grid-breakpoints, sm)) {
+    right: auto;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &-list {
+    margin-bottom: 20px;
+
+    li {
+
+      a {
+        position: relative;
+        margin-bottom: 15px;
+        padding: 0 30px 0 15px;
+        display: block;
+        font-size: 24px;
+        font-family: $headings-font-family;
+        font-weight: bold;
+        color: $dark;
+        transition: .5s;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+          font-size: 30px;
+          margin-bottom: 20px;
+          padding: 0 90px 0 70px;
+        }
+
+        &::before {
+          content: '';
+          @extend %pos;
+          right: auto;
+          width: 0;
+          background: $primary;
+          transition: .5s;
+        }
+
+        &.blur {
+          filter: url('#myblurfilter');
+        }
+
+        &.active {
+          padding-left: 30px;
+
+          @media (min-width: map_get($grid-breakpoints, sm)) {
+            padding-left: 90px;
+          }
+
+          &::before {
+            width: 25px;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+              padding-left: 55px;
+            }
+          }
+        }
+
+        &:hover {
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    @extend %pos;
+    top: auto;
+    height: 15px;
+    background: $primary;
+  }
+}
