@@ -65,6 +65,10 @@
                     Скролл вниз
                 </div>
             </a>
+            <div class="slider-nav">
+                <div class="slider-nav__item slider-nav__item--last">04</div>
+                <div class="slider-nav__item slider-nav__item--index">01</div>
+            </div>
         </div>
     </div>
 </section>

@@ -99,16 +99,26 @@ window.jQuery = window.$ = jquery;
             });
 
             var prevArrowIntro = document.querySelector('.slider-arrow-item--prev-intro');
+            var introSliderIndex = document.querySelector('.slider-nav__item--index');
+
+            introSliderIndex.innerText = flkty1.selectedIndex + 1;
 
             prevArrowIntro.addEventListener('click', function () {
-                flkty1.previous(true, false);
+                flkty1.previous(false, false);
+                introSliderIndex.innerText = flkty1.selectedIndex + 1;
             });
 
             var nextArrowIntro = document.querySelector('.slider-arrow-item--next-intro');
 
             nextArrowIntro.addEventListener('click', function () {
-                flkty1.next(true, false);
+                flkty1.next(false, false);
+                introSliderIndex.innerText = flkty1.selectedIndex + 1;
             });
+
+            var introSliderlast = document.querySelector('.slider-nav__item--last');
+
+            introSliderlast.innerText = flkty1.getCellElements().length;
+
         }
     }
 
