@@ -1,10 +1,10 @@
 <?php
 
-//function generateRandomString($length = 10)
-//{
-//	return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-//		ceil($length / strlen($x)))), 1, $length);
-//}
+function generateRandomString($length = 10)
+{
+	return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+		ceil($length / strlen($x)))), 1, $length);
+}
 
 require_once('store.php');
 
@@ -13,7 +13,10 @@ require_once('views/base/header.php');
 
 $sections = [
 	'intro',
-    'feedback'
+    'feedback',
+    'about',
+    'questions',
+    'catalog'
 ];
 
 foreach ($sections as $section) {

@@ -37,3 +37,71 @@
     }
   }
 }
+
+.custom-list {
+
+  li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 3px;
+      height: 13px;
+    }
+  }
+
+  &--primary {
+
+    li {
+
+      &::before {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.info-car {
+  margin-bottom: 20px;
+
+  &-item {
+
+    &__title {
+      font-size: 14px;
+      margin-right: 5px;
+      color: #888888;
+
+      @media (min-width: map_get($grid-breakpoints, sm)) {
+        font-size: $font-size-base;
+      }
+    }
+
+    &__value {
+
+      &--price {
+        margin-left: 10px;
+        font-size: 18px;
+        font-family: $headings-font-family;
+        font-weight: bold;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &--price {
+      margin-top: 20px;
+
+      .info-car-price {
+        font-family: $headings-font-family;
+        margin-left: 5px;
+      }
+    }
+  }
+}

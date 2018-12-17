@@ -73,6 +73,7 @@ $about = [
 ];
 
 $questions = [
+    'image' => '../images/content/main/questions/questions-1.jpg',
     'title' => 'Как взять машину в прокат?',
     'list' => [
         'Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.',
@@ -84,48 +85,52 @@ $questions = [
 
 $catalog = [
     [
-        'image' => '../images/content/main/catalog-1.jpg',
+        'image' => '../images/content/main/catalog/catalog-1.jpg',
         'title' => 'Opel Astra',
         'body' => 'Хечбек',
         'capacity' => '5 мест',
         'transmission' => 'Автомат',
         'year' => '2016',
         'price' => '850',
-        'min_image' => '../images/content/main/catalog-min-1.jpg',
-        'video_link' => ''
+        'min_image' => '../images/content/main/catalog/catalog-min-1.jpg',
+        'min_image_video' => '../images/content/main/catalog/catalog-min-1.jpg',
+        'video_link' => 'http://'
     ],
     [
-        'image' => '../images/content/main/catalog-2.jpg',
-        'title' => '',
+        'image' => '../images/content/main/catalog/catalog-2.jpg',
+        'title' => 'Ford Mondeo',
         'body' => 'Хечбек',
         'capacity' => '5 мест',
         'transmission' => 'Автомат',
         'year' => '2016',
         'price' => '750',
-        'min_image' => '../images/content/main/catalog-min-2.jpg',
-        'video_link' => ''
+        'min_image' => '../images/content/main/catalog/catalog-min-2.jpg',
+        'min_image_video' => '../images/content/main/catalog/catalog-min-2.jpg',
+        'video_link' => 'http://'
     ],
     [
-        'image' => '../images/content/main/catalog-3.jpg',
-        'title' => '',
+        'image' => '../images/content/main/catalog/catalog-3.jpg',
+        'title' => 'Renault Megane',
         'body' => 'Хечбек',
         'capacity' => '5 мест',
         'transmission' => 'Автомат',
         'year' => '2016',
         'price' => '899',
-        'min_image' => '../images/content/main/catalog-min-3.jpg',
-        'video_link' => ''
+        'min_image' => '../images/content/main/catalog/catalog-min-3.jpg',
+        'min_image_video' => '../images/content/main/catalog/catalog-min-3.jpg',
+        'video_link' => 'http://'
     ],
     [
-        'image' => '../images/content/main/catalog-4.jpg',
-        'title' => '',
+        'image' => '../images/content/main/catalog/catalog-4.jpg',
+        'title' => 'Hyundai Accent',
         'body' => 'Хечбек',
         'capacity' => '5 мест',
         'transmission' => 'Автомат',
         'year' => '2016',
         'price' => '699',
-        'min_image' => '../images/content/main/catalog-min-4.jpg',
-        'video_link' => ''
+        'min_image' => '../images/content/main/catalog/catalog-min-4.jpg',
+        'min_image_video' => '../images/content/main/catalog/catalog-min-4.jpg',
+        'video_link' => 'http://'
     ],
 ];
 
@@ -140,12 +145,12 @@ $reviews = [
         [
             'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. Состояние отличное, видно что ребята следят за своими машинами. Спасибо.',
             'name' => 'Елена, бухгалтер',
-            'image' => '../images/content/main/reviews/reviews-1.jpg'
+            'image' => '../images/content/main/reviews/reviews-2.jpg'
         ],
         [
             'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. Состояние отличное, видно что ребята следят за своими машинами. Спасибо.',
             'name' => 'Елена, бухгалтер',
-            'image' => '../images/content/main/reviews/reviews-1.jpg'
+            'image' => '../images/content/main/reviews/reviews-3.jpg'
         ],
     ],
 ];
@@ -153,7 +158,8 @@ $reviews = [
 $contacts = [
     'address' => 'г.Запорожье просп. Соборный 150',
     'phone' => '+38 099 110 22 33',
-    'email' => 'rent_car@gmail.com'
+    'email' => 'rent_car@gmail.com',
+    'image' => '../images/content/main/contacts/contacts-1.jpg'
 ];
 
 

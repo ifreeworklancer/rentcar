@@ -1,16 +1,24 @@
 #intro {
-  height: 100vh;
+  height: 600px;
   max-height: 1080px;
+
+  @media (min-width: map_get($grid-breakpoints, sm)) {
+    height: 100vh;
+  }
 
   .scroll-down {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 20px;
-    display: flex;
     align-items: center;
     color: #fff;
     z-index: 20;
+    display: none;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      display: flex;
+    }
 
     &__text {
       margin-top: -20px;
@@ -24,6 +32,18 @@
     margin-left: -65px;
     z-index: 5;
     display: flex;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      left: 58.4%;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      left: 66.7%;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+      left: 75%;
+    }
 
     &-item {
       width: 65px;
@@ -58,6 +78,11 @@
     padding: 50px 60px;
     background: rgba($dark, .5);
     z-index: 3;
+    display: none;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      display: block;
+    }
 
     &__item {
       position: relative;
@@ -86,7 +111,13 @@
     transform: rotate(-90deg);
     width: 100%;
     max-width: 240px;
-    display: flex;
+    z-index: 4;
+    pointer-events: none;
+    display: none;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      display: flex;
+    }
 
     li {
       flex: 1 0 auto;
@@ -126,9 +157,13 @@
     position: absolute;
     top: 100px;
     right: 0;
-    padding: 35px 45px;
+    padding: 20px 25px;
     color: #fff;
     background: rgba(#262d3a, .5);
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      padding: 35px 45px;
+    }
 
     &__subtitle {
       position: relative;
@@ -146,45 +181,43 @@
   }
 
   .content {
-    background-image: linear-gradient(180deg, rgb(38, 46, 58) 0%, rgb(14, 16, 19) 100%);
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      background-image: linear-gradient(180deg, rgb(38, 46, 58) 0%, rgb(14, 16, 19) 100%);
+      position: relative;
+      bottom: auto;
+      right: auto;
+    }
+
+    &-item {
+      padding: 20px 15px;
+      background: rgba($dark, .5);
+
+      @media (min-width: map_get($grid-breakpoints, sm)) {
+        padding: 0;
+        background: transparent;
+      }
+    }
 
     .title {
       color: $primary;
       margin-bottom: 15px;
     }
 
-    .info {
-      margin-bottom: 30px;
+    .info-car {
+      margin-bottom: 20px;
+      display: none;
 
-      &-item {
-
-        &__title {
-          margin-right: 5px;
-          color: #888888;
-        }
-
-        &__value {
-
-          &--price {
-            margin-left: 10px;
-            font-size: 24px;
-            font-family: $headings-font-family;
-            font-weight: bold;
-          }
-        }
-
-        &--price {
-          margin-top: 20px;
-
-          .info-price {
-            font-family: $headings-font-family;
-            margin-left: 5px;
-          }
-        }
+      @media (min-width: map_get($grid-breakpoints, sm)) {
+        display: block;
       }
     }
   }

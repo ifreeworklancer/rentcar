@@ -3,35 +3,17 @@
 
     &.in-focus {
 
-        .label-placeholder {
-            left: 0;
-            bottom: 90%;
-            font-size: 13px;
-            color: #a8b7cf;
-        }
-
         &::before {
-            background: $primary;
             width: 100%;
         }
     }
 
-    .label-placeholder {
-        position: absolute;
-        left: 15px;
-        bottom: 0;
-        color: #ccc;
-        cursor: pointer;
-        z-index: 5;
-        transition: .5s;
-    }
-
     .form-control {
         padding: 10px 15px;
-        background: #202937;
+        background: #fff;
         border-radius: 0;
         border: none;
-        color: #fff;
+        color: $dark;
     }
 
     &--btn {
@@ -45,9 +27,9 @@
         content: '';
         @extend %pos;
         top: auto;
-        width: 15px;
+        width: 0;
         height: 2px;
-        background: $light;
+        background: $dark;
         transition: .5s;
     }
 }
@@ -56,7 +38,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     @media (min-width: map_get($grid-breakpoints, sm)) {
         flex-direction: row;
@@ -70,6 +51,14 @@
         @media (min-width: map_get($grid-breakpoints, sm)) {
             width: 30%;
             margin: 0;
+        }
+
+        .btn {
+            height: 100%;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                padding: 0 $btn-padding-x;
+            }
         }
     }
 }
