@@ -20,7 +20,7 @@
                 <div class="about-item-workshop about-item-workshop--bottom">
                     <div class="content order-2 order-xl-1">
                         <div class="img" style="background-image:url('<?= $about['third_image']?>');"></div>
-                        <a href="#" class="btn btn-secondary">
+                        <a href="#" class="btn btn-secondary" data-src="<?= $about['video_link']?>">
                             Смотерть видео
                         </a>
                     </div>

@@ -13,14 +13,23 @@ window.jQuery = window.$ = jquery;
      */
     $('.burger-menu').click(function () {
         var menu = $('.menu');
+        var menuMask = $('.menu-mask');
         $(this).toggleClass('active');
         menu.toggleClass('active');
+        menuMask.toggleClass('active');
         if ($(menu).hasClass('active')) {
             $('.burger-menu-text').text("Закрыть");
         } else {
             $('.burger-menu-text').text("Меню");
         }
     });
+
+    $('.menu-mask').on('click', function () {
+        $('.burger-menu').removeClass('active');
+        $('.burger-menu-text').text("Меню");
+        $('.menu').removeClass('active');
+        $('.menu-mask').removeClass('active');
+    })
 
     /**
      * Scroll
@@ -39,7 +48,21 @@ window.jQuery = window.$ = jquery;
             }, 1500);
 
             $('.burger-menu').removeClass('active');
+            $('.burger-menu-text').text("Меню");
             $('.menu').removeClass('active');
+            $('.menu-mask').removeClass('active');
+        }
+    });
+
+    $(window).on('scroll', function () {
+        $('.burger-menu').removeClass('active');
+        $('.burger-menu-text').text("Меню");
+        $('.menu').removeClass('active');
+        $('.menu-mask').removeClass('active');
+        if ($(this).scrollTop() > 20) {
+            $('#app-header').addClass('is-fixed');
+        } else {
+            $('#app-header').removeClass('is-fixed');
         }
     });
 
@@ -78,6 +101,71 @@ window.jQuery = window.$ = jquery;
         new IMask(phone, {
             mask: '+{38} (000) 000-00-00'
         });
+    });
+
+    /**
+     * Youtube video
+     */
+    $('[data-src]').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).data('src'),
+            padding = $(window).width() > 768 ? 120 : 30,
+            ratio = 510 / 1080,
+            width = $(window).width() - padding,
+            height = width * ratio,
+            html = '<iframe style="width: ' + width + 'px; height: ' + height + 'px;" ' +
+                'src="https://www.youtube.com/embed/' +
+                id + '" frameborder="0" gesture="media" allowfullscreen></iframe>';
+
+        $('body').append('<div class="outer">' + html + '</div>');
+    });
+
+    $(document).mouseup(function (e) {
+        var container = $('.outer iframe');
+
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.outer').remove();
+        }
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            $('.outer').remove();
+        }
+    });
+
+    /**
+     * Modal
+     */
+    var connectModal = $('.custom-modal--connect');
+    var orderModal = $('.custom-modal--order');
+    var closeModal = $('.close-modal');
+    var modalMask = $('.modal-mask');
+
+    $('.open-connect').on('click', function (e) {
+        e.preventDefault();
+        $(connectModal).addClass('active');
+        $(modalMask).addClass('active');
+    });
+
+    $('.open-order').on('click', function (e) {
+        e.preventDefault();
+        $(orderModal).addClass('active');
+        $(modalMask).addClass('active');
+        $("[name='car_title']").val($(this).data('cartitle'));
+    });
+
+    $(closeModal).on('click', function () {
+        $(connectModal).removeClass('active');
+        $(orderModal).removeClass('active');
+        $(modalMask).removeClass('active');
+    });
+
+    $(modalMask).on('click', function () {
+        $(connectModal).removeClass('active');
+        $(orderModal).removeClass('active');
+        $(modalMask).removeClass('active');
     });
 
 
@@ -122,6 +210,32 @@ window.jQuery = window.$ = jquery;
         }
     }
 
+    if ($('.reviews-slider')) {
+
+        let elem2 = document.querySelector('.reviews-slider');
+        if (elem2) {
+
+            const flkty2 = new Flickity(elem2, {
+                prevNextButtons: false,
+                cellAlign: 'center',
+                contain: true,
+                draggable: false,
+                wrapAround: true,
+                adaptiveHeight: true
+            });
+
+            var prevArrowReviews = document.querySelector('.slider-arrow-item--prev-reviews');
+            prevArrowReviews.addEventListener('click', function () {
+                flkty2.previous(false, false);
+            });
+
+            var nextArrowReviews = document.querySelector('.slider-arrow-item--next-reviews');
+            nextArrowReviews.addEventListener('click', function () {
+                flkty2.next(false, false);
+            });
+        }
+    }
+
 
     /**
      * Animate scroll
@@ -156,29 +270,32 @@ window.jQuery = window.$ = jquery;
     /**
      * Map
      */
-    // var element = document.getElementById('map');
-    //
-    // var map = L.map(element);
-    //
-    // var logoIcon = L.icon({
-    //     iconUrl: '../images/icon/logo/marker-icon.png',
-    //
-    //     iconSize: [225, 85],
-    //     iconAnchor: [22, 94],
-    //     popupAnchor: [-3, -76]
-    // });
-    //
-    // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    // }).addTo(map);
-    //
-    // var target = L.latLng('50.4183', '30.47579');
-    //
-    // map.setView(target, 14);
-    //
-    // L.marker(target, {
-    //     icon: logoIcon
-    // }).addTo(map);
+    if ($('#contacts-map').length > 0) {
+        var contactsElement = document.getElementById('contacts-map');
 
+        var contactsMap = L.map(contactsElement);
+
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(contactsMap);
+
+        var contactsLat = $("[name='contactsLat']").val();
+        var contactsLng = $("[name='contactsLng']").val();
+
+        var contactsTarget = L.latLng(contactsLat, contactsLng);
+
+        contactsMap.setView(contactsTarget, 20);
+
+        L.marker(contactsTarget, {}).addTo(contactsMap);
+    }
+
+
+    /**
+     * Footer secondary
+     */
+    if ($(window).width() > 1024) {
+        $('.secondary-footer').css('margin-top', '-' + $('.secondary-footer').innerHeight() + 'px');
+    }
 
 })(jQuery)

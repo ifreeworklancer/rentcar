@@ -60,6 +60,18 @@
 	c0.8-0.8,0.8-2,0-2.8s-2-0.8-2.8,0L52,84.2V71C52,69.9,51.1,69,50,69z"/>
     </symbol>
 
+    <symbol id="quote-icon" viewBox="0 0 32 32">
+        <path d="M0,4v12h8c0,4.41-3.586,8-8,8v4c6.617,0,12-5.383,12-12V4H0z"/>
+        <path d="M20,4v12h8c0,4.41-3.586,8-8,8v4c6.617,0,12-5.383,12-12V4H20z"/>
+    </symbol>
+
+    <symbol id="play-video-icon" viewBox="0 0 512 512">
+        <path d="m354.2,247.4l-135.1-92.4c-4.2-3.1-15.4-3.1-16.3,8.6v184.8c1,11.7 12.4,11.9 16.3,8.6l135.1-92.4c3.5-2.1 8.3-10.7 0-17.2zm-130.5,81.3v-145.4l106.1,72.7-106.1,72.7z"
+              fill="#ffbd69"/>
+        <path d="M256,11C120.9,11,11,120.9,11,256s109.9,245,245,245s245-109.9,245-245S391.1,11,256,11z M256,480.1    C132.4,480.1,31.9,379.6,31.9,256S132.4,31.9,256,31.9S480.1,132.4,480.1,256S379.6,480.1,256,480.1z"
+              fill="#ffbd69"/>
+    </symbol>
+
 </svg>
 
 
@@ -89,7 +101,7 @@
             </div>
             <div class="col-lg-5 col-xl-4 ml-auto">
                 <div class="header-item d-none d-lg-flex align-items-center">
-                    <a href="#" class="btn btn-primary">Связаться с нами</a>
+                    <a href="#" class="btn btn-primary open-connect">Связаться с нами</a>
                     <ul class="contacts-list">
                         <li class="contacts-list-item contacts-list-item--phone">
                             <a href="tel:<?= $phone_link; ?>"><?= $phone; ?></a>
@@ -108,10 +120,45 @@
             ?>
         </ul>
         <div class="header-item d-flex d-lg-none align-items-center">
-            <a href="#" class="btn btn-primary">Связаться с нами</a>
+            <a href="#" class="btn btn-primary open-connect">Связаться с нами</a>
         </div>
     </nav>
+    <div class="menu-mask"></div>
 </header>
+
+<!-- Modal -->
+<div class="custom-modal custom-modal--connect">
+    <div class="close-modal">
+        <div class="line line--left"></div>
+        <div class="line line--right"></div>
+    </div>
+    <div class="custom-modal-header">
+        <h3 class="section-title mb-4">
+            Оставте заявку, мы Вам перезвоним
+        </h3>
+    </div>
+    <div class="custom-modal-body">
+        <form method="post">
+            <input type="hidden" name="title" value="Свяжитесь с нами">
+            <div class="form-column">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control"
+                           id="user-name--<?php echo $name = generateRandomString(); ?>" placeholder="Введите ваше имя"
+                           required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" class="form-control"
+                           id="user-phone--<?php echo $phone = generateRandomString(); ?>" placeholder="Номер телефона"
+                           required>
+                </div>
+                <div class="form-group form-group--btn">
+                    <button type="submit" class="btn btn-dark">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-mask"></div>
 
 <!-- Main -->
 <main>

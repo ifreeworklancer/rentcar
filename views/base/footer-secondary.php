@@ -1,21 +1,7 @@
-<!-- Feedback -->
-<section id="feedback">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-title mb-4">
-                    Оставте заявку, мы Вам перезвоним
-                </h2>
-                <?php include(__DIR__ . '/../modules/form.php'); ?>
-            </div>
-        </div>
-    </div>
-</section>
-
 </main>
 
 <!-- App-footer -->
-<footer id="app-footer">
+<footer id="app-footer" class="secondary-footer">
     <div class="container-fluid px-lg-5">
         <div class="row align-items-center">
             <div class="d-flex justify-content-center col-xl-auto">
@@ -25,7 +11,7 @@
                 <ul class="footer-list">
                     <?php
                     foreach ($nav as $key => $value) {
-                        echo '<li><a href="#' . $key . '"' . 'class="scroll-link">' . $value . '</a></li>';
+                        echo '<li><a href="#' . $key . '">' . $value . '</a></li>';
                     }
                     ?>
                 </ul>

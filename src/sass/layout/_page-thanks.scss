@@ -1,0 +1,20 @@
+#thanks {
+  height: 100vh;
+  min-height: 600px;
+  background: url("../images/bg/page-thanks-bg.jpg") 50% 50% /cover no-repeat;
+
+  .thanks-item {
+    color: #fff;
+
+    &__title {
+      font-size: 48px;
+      line-height: 1;
+      color: $primary;
+      margin-bottom: 0;
+    }
+
+    &__subtitle {
+      margin: 25px 0;
+    }
+  }
+}

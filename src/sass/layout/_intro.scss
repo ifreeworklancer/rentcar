@@ -26,12 +26,9 @@
   }
 
   .slider-arrow {
-    position: absolute;
     left: 75%;
     bottom: 0;
     margin-left: -65px;
-    z-index: 5;
-    display: flex;
 
     @media (min-width: map_get($grid-breakpoints, sm)) {
       left: 58.4%;
@@ -43,31 +40,6 @@
 
     @media (min-width: map_get($grid-breakpoints, xl)) {
       left: 75%;
-    }
-
-    &-item {
-      width: 65px;
-      height: 65px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-
-      &--prev {
-        background: $primary;
-
-        svg {
-          fill: #fff;
-        }
-      }
-
-      &--next {
-        background: #fff;
-
-        svg {
-          fill: $dark;
-        }
-      }
     }
   }
 

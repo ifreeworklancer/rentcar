@@ -1,0 +1,25 @@
+#contacts-map {
+  height: 250px;
+
+  @media (min-width: map_get($grid-breakpoints, sm)) {
+    height: 600px;
+  }
+}
+
+.contacts-item {
+  height: 50%;
+  min-height: 250px;
+
+  .img {
+    height: 100%;
+    @extend %img;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( 180deg, rgb(38,46,58) 0%, rgb(14,16,19) 100%);
+  }
+}

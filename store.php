@@ -70,6 +70,7 @@ $about = [
     'first_image' => '../images/content/main/about/about-1.jpg',
     'second_image' => '../images/content/main/about/about-2.jpg',
     'third_image' => '../images/content/main/about/about-3.jpg',
+    'video_link' => 'GHhMJjPnezU'
 ];
 
 $questions = [
@@ -94,7 +95,7 @@ $catalog = [
         'price' => '850',
         'min_image' => '../images/content/main/catalog/catalog-min-1.jpg',
         'min_image_video' => '../images/content/main/catalog/catalog-min-1.jpg',
-        'video_link' => 'http://'
+        'video_link' => 'uYpBIrhW114'
     ],
     [
         'image' => '../images/content/main/catalog/catalog-2.jpg',
@@ -106,7 +107,7 @@ $catalog = [
         'price' => '750',
         'min_image' => '../images/content/main/catalog/catalog-min-2.jpg',
         'min_image_video' => '../images/content/main/catalog/catalog-min-2.jpg',
-        'video_link' => 'http://'
+        'video_link' => 'qWSI0X0qsVQ'
     ],
     [
         'image' => '../images/content/main/catalog/catalog-3.jpg',
@@ -118,7 +119,7 @@ $catalog = [
         'price' => '899',
         'min_image' => '../images/content/main/catalog/catalog-min-3.jpg',
         'min_image_video' => '../images/content/main/catalog/catalog-min-3.jpg',
-        'video_link' => 'http://'
+        'video_link' => 'P9BaUITjc-o'
     ],
     [
         'image' => '../images/content/main/catalog/catalog-4.jpg',
@@ -130,7 +131,7 @@ $catalog = [
         'price' => '699',
         'min_image' => '../images/content/main/catalog/catalog-min-4.jpg',
         'min_image_video' => '../images/content/main/catalog/catalog-min-4.jpg',
-        'video_link' => 'http://'
+        'video_link' => 'NNhE6qS6i9I'
     ],
 ];
 
@@ -143,12 +144,12 @@ $reviews = [
             'image' => '../images/content/main/reviews/reviews-1.jpg'
         ],
         [
-            'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. Состояние отличное, видно что ребята следят за своими машинами. Спасибо.',
+            'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Состояние отличное, видно что ребята следят за своими машинами. Спасибо.',
             'name' => 'Елена, бухгалтер',
             'image' => '../images/content/main/reviews/reviews-2.jpg'
         ],
         [
-            'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. Состояние отличное, видно что ребята следят за своими машинами. Спасибо.',
+            'text' => 'Пользовалась услугами компании 3 дня, когда была в командировке в Запорожье. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. Состояние отличное, видно что ребята следят за своими машинами. Спасибо. Нужно было много мотаться по городу и в Днепр. Взяла Ford Mondeo. ',
             'name' => 'Елена, бухгалтер',
             'image' => '../images/content/main/reviews/reviews-3.jpg'
         ],
@@ -157,6 +158,9 @@ $reviews = [
 
 $contacts = [
     'address' => 'г.Запорожье просп. Соборный 150',
+    'address_link' => 'https://www.openstreetmap.org/directions?engine=osrm_car&route=47.83018%2C35.16114%3B47.83018%2C35.16114#map=19/47.83026/35.16131',
+    'lat' => '47.83021',
+    'lng' => '35.16114',
     'phone' => '+38 099 110 22 33',
     'email' => 'rent_car@gmail.com',
     'image' => '../images/content/main/contacts/contacts-1.jpg'

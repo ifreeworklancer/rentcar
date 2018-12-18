@@ -173,3 +173,14 @@
     background: $primary;
   }
 }
+
+.menu-mask {
+  @extend %pos;
+  position: fixed;
+  display: none;
+  z-index: 98;
+
+  &.active {
+    display: block;
+  }
+}

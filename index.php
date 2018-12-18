@@ -16,7 +16,9 @@ $sections = [
     'feedback',
     'about',
     'questions',
-    'catalog'
+    'catalog',
+    'reviews',
+    'contacts'
 ];
 
 foreach ($sections as $section) {

@@ -1,26 +1,39 @@
 #app-header {
-    @extend %pos;
-    top: 0;
-    bottom: auto;
-    padding-top: 15px;
-    z-index: 100;
+  @extend %pos;
+  top: 0;
+  bottom: auto;
+  padding-top: 15px;
+  z-index: 100;
 
-    .btn {
-        padding: 15px 25px;
-    }
+  &.is-fixed {
+    position: fixed;
+    padding: 15px 0;
+    background: rgba($dark, .5);
+  }
 
-    .contacts-list {
-        margin-left: 25px;
-    }
+  .btn {
+    padding: 15px 25px;
+  }
 
-    .header-item {
-        margin-left: -40px;
+  .contacts-list {
+    margin-left: 25px;
+
+    li {
+      margin-bottom: 0;
+      a {
+        font-size: $font-size-base;
+      }
     }
+  }
+
+  .header-item {
+    margin-left: -40px;
+  }
 }
 
 .logo {
-    display: block;
-    width: 130px;
-    height: 32px;
-    @extend %img;
+  display: block;
+  width: 130px;
+  height: 32px;
+  @extend %img;
 }

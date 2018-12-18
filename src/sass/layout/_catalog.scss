@@ -1,4 +1,5 @@
 .catalog-card {
+  overflow: hidden;
   position: relative;
   transition: .5s;
 
@@ -22,6 +23,7 @@
         display: flex;
 
         .img {
+          position: relative;
           width: 50%;
           height: 120px;
           border: 1px solid #E0E0E1;
@@ -35,6 +37,13 @@
 
           &-video {
             cursor: pointer;
+
+            .play-video {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
           }
         }
       }
