@@ -1,0 +1,173 @@
+#category-car {
+
+  .category-car-intro {
+    height: auto;
+
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+      height: 100vh;
+      max-height: 1080px;
+    }
+
+    .img {
+      height: 100%;
+      min-height: 300px;
+      @extend %img;
+    }
+
+    .content {
+      position: relative;
+      padding: 80px 20px 40px;
+      width: 100%;
+      background-image: linear-gradient( 180deg, rgb(38,46,58) 0%, rgb(14,16,19) 100%);
+      color: #fff;
+
+      @media (min-width: map_get($grid-breakpoints, sm)) {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 80px 40px 40px;
+        max-width: 480px;
+      }
+
+      .title {
+        color: $primary;
+      }
+
+      .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.category-card {
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+  @extend %img;
+
+  @media (min-width: map_get($grid-breakpoints, sm)) {
+    height: 400px;
+  }
+
+  &--video {
+    cursor: pointer;
+
+    .play-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: $headings-font-family;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+}
+
+.category-car-slider {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+
+  .category-car-slider-nav {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      right: -10%;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+      right: -8%;
+    }
+
+    &-item {
+      margin-right: 5px;
+      font-family: $headings-font-family;
+      font-size: 20px;
+      color: #fff;
+
+      &--last {
+        color: #888888;
+
+        &::before {
+          content: '/';
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .flickity-page-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 35px;
+    width: 100%;
+    max-width: 240px;
+    z-index: 4;
+    pointer-events: none;
+    display: none;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+      display: flex;
+    }
+
+    li {
+      flex: 1 0 auto;
+      margin: 0;
+      height: 2px;
+      background: #fff;
+      border: none;
+      border-radius: 0;
+      opacity: 1;
+
+      &.is-selected {
+        background: $primary;
+      }
+    }
+  }
+
+  &-item {
+    width: 100%;
+    height: 100%;
+
+    .img {
+      position: relative;
+      height: 100%;
+      @extend %img;
+    }
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    left: -8%;
+    right: -8%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -3;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      left: -10%;
+      right: -10%;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+      left: -8%;
+      right: -8%;
+    }
+
+    &-item {
+      background: transparent;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+}

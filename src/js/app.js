@@ -132,12 +132,17 @@ window.jQuery = window.$ = jquery;
     $(document).on('keyup', function (e) {
         if (e.keyCode === 27) {
             $('.outer').remove();
+            $(categoryCarModal).removeClass('active');
+            $(connectModal).removeClass('active');
+            $(orderModal).removeClass('active');
+            $(modalMask).removeClass('active');
         }
     });
 
     /**
      * Modal
      */
+    var categoryCarModal = $('.custom-modal--category-car');
     var connectModal = $('.custom-modal--connect');
     var orderModal = $('.custom-modal--order');
     var closeModal = $('.close-modal');
@@ -156,13 +161,22 @@ window.jQuery = window.$ = jquery;
         $("[name='car_title']").val($(this).data('cartitle'));
     });
 
+    if($(window).width() > 1024) {
+        $('[data-indexCar]').on('click', function () {
+            $(categoryCarModal).addClass('active');
+            $(modalMask).addClass('active');
+        });
+    }
+
     $(closeModal).on('click', function () {
+        $(categoryCarModal).removeClass('active');
         $(connectModal).removeClass('active');
         $(orderModal).removeClass('active');
         $(modalMask).removeClass('active');
     });
 
     $(modalMask).on('click', function () {
+        $(categoryCarModal).removeClass('active');
         $(connectModal).removeClass('active');
         $(orderModal).removeClass('active');
         $(modalMask).removeClass('active');
@@ -236,6 +250,67 @@ window.jQuery = window.$ = jquery;
         }
     }
 
+    if ($('.category-car-slider')) {
+
+        let elem3 = document.querySelector('.category-car-slider');
+        if (elem3) {
+
+            const flkty3 = new Flickity(elem3, {
+                prevNextButtons: false,
+                cellAlign: 'center',
+                contain: true,
+                draggable: false,
+                wrapAround: true,
+                cellSelector: '.category-car-slider-item'
+            });
+
+            var prevArrowCategoryCar = document.querySelector('.slider-arrow-item--prev-category-car');
+            var categoryCarSliderIndex = document.querySelector('.category-car-slider-nav-item--index');
+
+            if (flkty3.selectedIndex < 9) {
+                categoryCarSliderIndex.innerText = `0${flkty3.selectedIndex + 1}`;
+            } else {
+                categoryCarSliderIndex.innerText = flkty3.selectedIndex + 1;
+            }
+
+            prevArrowCategoryCar.addEventListener('click', function () {
+                flkty3.previous(false, false);
+                if (flkty3.selectedIndex < 9) {
+                    categoryCarSliderIndex.innerText = `0${flkty3.selectedIndex + 1}`;
+                } else {
+                    categoryCarSliderIndex.innerText = flkty3.selectedIndex + 1;
+                }
+            });
+
+            var nextArrowCategoryCar = document.querySelector('.slider-arrow-item--next-category-car');
+
+            nextArrowCategoryCar.addEventListener('click', function () {
+                flkty3.next(false, false);
+                if (flkty3.selectedIndex < 9) {
+                    categoryCarSliderIndex.innerText = `0${flkty3.selectedIndex + 1}`;
+                } else {
+                    categoryCarSliderIndex.innerText = flkty3.selectedIndex + 1;
+                }
+            });
+
+            var categoryCarSliderlast = document.querySelector('.category-car-slider-nav-item--last');
+
+            if (flkty3.getCellElements().length < 9) {
+                categoryCarSliderlast.innerText = `0${flkty3.getCellElements().length}`;
+            } else {
+                categoryCarSliderlast.innerText = flkty3.getCellElements().length;
+            }
+
+            $('[data-indexCar]').on('click', function () {
+                flkty3.select($(this).data('indexcar'));
+                if (flkty3.selectedIndex < 9) {
+                    categoryCarSliderIndex.innerText = `0${flkty3.selectedIndex + 1}`;
+                } else {
+                    categoryCarSliderIndex.innerText = flkty3.selectedIndex + 1;
+                }
+            });
+        }
+    }
 
     /**
      * Animate scroll

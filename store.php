@@ -166,5 +166,26 @@ $contacts = [
     'image' => '../images/content/main/contacts/contacts-1.jpg'
 ];
 
+$category_car = [
+    'intro' => [
+        'image' => '../images/content/category/car/car-intro-1.jpg',
+        'title' => 'Renault Megane',
+        'body' => 'Хечбек',
+        'capacity' => '5 мест',
+        'transmission' => 'Автомат',
+        'year' => '2016',
+        'price' => '900'
+    ],
+    'gallery' => [
+        '../images/content/category/car/car-1.jpg',
+        '../images/content/category/car/car-2.jpg',
+        '../images/content/category/car/car-3.jpg',
+        '../images/content/category/car/car-4.jpg',
+        '../images/content/category/car/car-5.jpg',
+        '../images/content/category/car/car-6.jpg',
+    ],
+    'video' => 'ycBBygx299Q'
+];
+
 
 
