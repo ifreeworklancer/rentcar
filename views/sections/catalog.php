@@ -14,7 +14,7 @@
                     . '<div class="content">'
                     . '<div class="prev">'
                     . '<div class="img" style="background-image:url(' . $item['min_image'] . ');"></div>'
-                    . '<div class="img img-video" style="background-image:url(' . $item['min_image_video'] . ');" data-src="' . $item['video_link'] . '">'
+                    . '<div class="img img-video" style="background-image:url(https://img.youtube.com/vi/'.$item['video_link'] .'/sddefault.jpg);" data-src="' . $item['video_link'] . '">'
                     . '<div class="play-video">'
                     . '<div class="play-video__icon">'
                     . '<svg width="30" height="30">'

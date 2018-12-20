@@ -9,9 +9,13 @@
   z-index: 120;
   border-radius: 3px;
   transition: .5s;
+  opacity: 0;
+  pointer-events: none;
   transform: translate(-50%, -300%);
 
   &.active {
+    opacity: 1;
+    pointer-events: all;
     transform: translate(-50%, -50%);
   }
 

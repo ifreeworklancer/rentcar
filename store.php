@@ -94,7 +94,6 @@ $catalog = [
         'year' => '2016',
         'price' => '850',
         'min_image' => '../images/content/main/catalog/catalog-min-1.jpg',
-        'min_image_video' => '../images/content/main/catalog/catalog-min-1.jpg',
         'video_link' => 'uYpBIrhW114'
     ],
     [
@@ -106,7 +105,6 @@ $catalog = [
         'year' => '2016',
         'price' => '750',
         'min_image' => '../images/content/main/catalog/catalog-min-2.jpg',
-        'min_image_video' => '../images/content/main/catalog/catalog-min-2.jpg',
         'video_link' => 'qWSI0X0qsVQ'
     ],
     [
@@ -118,7 +116,6 @@ $catalog = [
         'year' => '2016',
         'price' => '899',
         'min_image' => '../images/content/main/catalog/catalog-min-3.jpg',
-        'min_image_video' => '../images/content/main/catalog/catalog-min-3.jpg',
         'video_link' => 'P9BaUITjc-o'
     ],
     [
@@ -130,7 +127,6 @@ $catalog = [
         'year' => '2016',
         'price' => '699',
         'min_image' => '../images/content/main/catalog/catalog-min-4.jpg',
-        'min_image_video' => '../images/content/main/catalog/catalog-min-4.jpg',
         'video_link' => 'NNhE6qS6i9I'
     ],
 ];

@@ -10,6 +10,16 @@ require_once('store.php');
 
 require_once('views/base/header.php');
 
+?>
+
+<!-- Preloader -->
+<div id="overlay">
+    <div id="progstat"></div>
+    <div id="progress"></div>
+    <div class="logo" style="background-image:url('images/icon/logo/logo.png');"></div>
+</div>
+
+<?php
 
 $sections = [
 	'intro',
